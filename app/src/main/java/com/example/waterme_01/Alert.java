@@ -33,7 +33,7 @@ public class Alert extends AppCompatActivity {
         outputTemperature = findViewById(R.id.outputTemperature);
         outputAlert = findViewById(R.id.outputAlert);
         button = findViewById(R.id.backAlert);
-        mDatabase.child("outputSoil").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("soilStatus").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String outputMessage = dataSnapshot.getValue(String.class);
@@ -48,7 +48,7 @@ public class Alert extends AppCompatActivity {
             }
         });
 
-        mDatabase.child("outputTemperature").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Temperature").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String outputMessage = dataSnapshot.getValue(String.class);
@@ -63,7 +63,7 @@ public class Alert extends AppCompatActivity {
             }
         });
 
-        mDatabase.child("outputMessage").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Humidity").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String outputMessage = dataSnapshot.getValue(String.class);

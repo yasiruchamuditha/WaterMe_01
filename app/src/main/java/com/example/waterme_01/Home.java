@@ -6,11 +6,10 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class Home extends AppCompatActivity {
 
@@ -33,7 +32,7 @@ public class Home extends AppCompatActivity {
         cardHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Emergency.class);
+                Intent intent = new Intent(getApplicationContext(),ShutDown.class);
                 startActivity(intent);
                 finish();
             }

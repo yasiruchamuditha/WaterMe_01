@@ -29,27 +29,30 @@ public class CloudSync extends AppCompatActivity {
         setContentView(R.layout.activity_cloud_sync);
         button = findViewById(R.id.backCloud);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+       // mDatabase = FirebaseDatabase.getInstance().getReference();
         valueEditText = findViewById(R.id.valueEditTextS1);
         Button updateButton = findViewById(R.id.updateButtonS2);
         outputTextView = findViewById(R.id.outputTextViewS2);
-
-        mDatabase.child("userStatus").setValue(0);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("SoilMoisterUserStatus");
+        reference.child("userStatus").setValue(0);
 
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String valueStr = valueEditText.getText().toString();
                 int userStatus = Integer.parseInt(valueStr);
-                mDatabase.child("userStatus").setValue(userStatus);
+                reference.child("userStatus").setValue(userStatus);
 
 
-                mDatabase.child("userStatus").addValueEventListener(new ValueEventListener() {
+                reference.child("userStatus").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         int value = dataSnapshot.getValue(int.class);
                         if (value !=0) {
                             outputTextView.setText("Sucessfully updated");
+                        }
+                        else {
+                            outputTextView.setText("Not updated");
                         }
                     }
                     @Override

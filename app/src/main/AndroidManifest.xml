@@ -13,18 +13,18 @@
         android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
         <activity
-            android:name=".Emergency"
-            android:exported="true"
-            android:theme="@style/Theme.Material3.Light.NoActionBar">
+            android:name=".ShutDown"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".Alert"
             android:exported="true"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".CloudSync"
             android:exported="true"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".Loading"
             android:exported="true"
