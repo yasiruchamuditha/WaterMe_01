@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class Registration extends AppCompatActivity {
     TextInputEditText editTextEmail,editTextPassword;
@@ -25,7 +25,6 @@ public class Registration extends AppCompatActivity {
     FirebaseAuth mAuth;
     ProgressBar progressBar;
     TextView textView;
-
 
 
     @Override
@@ -80,7 +79,9 @@ public class Registration extends AppCompatActivity {
                                     startActivity(intent);
                                     finish();
 
-                                } else {
+                                }
+                                else
+                                {
                                     // If sign in fails
                                     Toast.makeText(Registration.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();

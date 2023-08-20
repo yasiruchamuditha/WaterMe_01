@@ -7,7 +7,15 @@
     tools:context=".Registration"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="15dp">
+    android:padding="20dp">
+
+    <LinearLayout
+        android:id="@+id/background01"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/login2"
+        android:orientation="vertical">
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"

@@ -7,18 +7,34 @@
     tools:context=".Login"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="15dp">
+  >
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/background01"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LOG IN"
-        android:id="@+id/lblHeadline"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
-        />
+        android:layout_height="250dp"
+        android:background="@drawable/login2"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/background01"
+        android:background="@drawable/loginback"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/lblHeadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="LOG IN"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,7 +84,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnLogin"
         android:layout_marginTop="25dp"
-        android:text="LOGIN"/>
+        android:textSize="20sp"
+        android:text="CONTINUE"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -76,8 +93,10 @@
         android:id="@+id/RegisterNow"
         android:text="Click to Register"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
         android:gravity="center"/>
+    </LinearLayout>
 
 </LinearLayout>
