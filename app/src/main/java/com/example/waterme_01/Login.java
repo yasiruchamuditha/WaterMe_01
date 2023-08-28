@@ -18,9 +18,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+/**
+ * @author yasiru
+ * contact me : https://linktr.ee/yasiruchamuditha for more information.
+ * */
 public class Login extends AppCompatActivity {
-
     TextInputEditText editTextEmail,editTextPassword;
     Button buttonLogin;
     FirebaseAuth mAuth;

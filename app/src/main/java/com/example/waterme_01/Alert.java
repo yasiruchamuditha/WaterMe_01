@@ -17,6 +17,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * @author yasiru
+ * contact me : https://linktr.ee/yasiruchamuditha for more information.
+ * */
+
 public class Alert extends AppCompatActivity {
     private DatabaseReference mDatabase;
 

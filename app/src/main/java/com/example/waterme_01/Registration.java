@@ -17,8 +17,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-
+/**
+ * @author yasiru
+ * contact me : https://linktr.ee/yasiruchamuditha for more information.
+ * */
 public class Registration extends AppCompatActivity {
     TextInputEditText editTextEmail,editTextPassword;
     Button buttonReg;

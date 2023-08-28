@@ -9,8 +9,10 @@ import android.view.View;
 
 
 import com.google.firebase.auth.FirebaseAuth;
-
-
+/**
+ * @author yasiru
+ * contact me : https://linktr.ee/yasiruchamuditha for more information.
+ * */
 public class Home extends AppCompatActivity {
 
     FirebaseAuth auth;

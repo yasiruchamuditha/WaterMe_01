@@ -23,6 +23,10 @@ public class CloudSync extends AppCompatActivity {
     private TextView outputTextView;
 
     Button button;
+    /**
+     * @author yasiru
+     * contact me : https://linktr.ee/yasiruchamuditha for more information.
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

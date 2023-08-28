@@ -12,6 +12,10 @@ import android.widget.Switch;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * @author yasiru
+ * contact me : https://linktr.ee/yasiruchamuditha for more information.
+ * */
 public class ShutDown extends AppCompatActivity {
     private Switch switch1;
 
