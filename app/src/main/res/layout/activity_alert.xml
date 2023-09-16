@@ -43,23 +43,42 @@
             android:text="Check Status"
             android:background="@android:color/holo_blue_light"
             />
-
         <TextView
-            android:id="@+id/outputMoisterLevel"
+            android:id="@+id/outputlabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="Soil Moister level"
+            android:text="Soil Moisture value is :"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginLeft="25dp"
             android:textSize="20dp" />
         <TextView
-            android:id="@+id/outputTemperature"
+            android:id="@+id/outputMoisterLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/outputlabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="Temperature Level"
+            android:text="Soil Moisture Percentage is :"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/outputPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=""
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginLeft="25dp"
@@ -70,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="Alert Message"
+            android:text=""
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginLeft="25dp"

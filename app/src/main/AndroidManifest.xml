@@ -35,10 +35,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Home"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
+
         <activity
             android:name=".Registration"
             android:exported="false"

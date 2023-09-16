@@ -38,7 +38,7 @@ public class CloudSync extends AppCompatActivity {
         Button updateButton = findViewById(R.id.updateButtonS2);
         outputTextView = findViewById(R.id.outputTextViewS2);
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("SoilMoisterUserStatus");
-        reference.child("userStatus").setValue(0);
+       // reference.child("userStatus").setValue(0);
 
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override

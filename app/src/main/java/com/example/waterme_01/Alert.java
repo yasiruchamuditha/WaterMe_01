@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,76 +16,71 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-/**
- * @author yasiru
- * contact me : https://linktr.ee/yasiruchamuditha for more information.
- * */
-
 public class Alert extends AppCompatActivity {
-    private DatabaseReference mDatabase;
 
     private TextView outputSoil;
-    private TextView outputTemperature;
+    private TextView outputPercentage;
     private TextView outputAlert;
-    Button button;
+    Button button, button2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        // Get a reference to the Firebase Realtime Database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         outputSoil = findViewById(R.id.outputMoisterLevel);
-        outputTemperature = findViewById(R.id.outputTemperature);
+        outputPercentage = findViewById(R.id.outputPercentage);
         outputAlert = findViewById(R.id.outputAlert);
         button = findViewById(R.id.backAlert);
-        mDatabase.child("soilStatus").addValueEventListener(new ValueEventListener() {
+        button2 = findViewById(R.id.btncheckStatus);
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String outputMessage = dataSnapshot.getValue(String.class);
-                if (outputMessage != null) {
-                    outputSoil.setText(outputMessage);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle errors
-                Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                DatabaseReference databaseRef = database.getReference("soilMoistureSensor/sensorValue");
+                DatabaseReference moisturePercentageRef = database.getReference("soilMoistureSensor/moisturePercentage");
+                databaseRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Integer data = dataSnapshot.getValue(Integer.class);
+                        if (data != 0) {
+                            outputSoil.setText(String.valueOf(data));
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Handle errors
+                        Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                moisturePercentageRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Integer data = dataSnapshot.getValue(Integer.class);
+                        if (data != 0) {
+                            outputPercentage.setText(String.valueOf(data));
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Handle errors
+                        Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                // Add code to retrieve and display temperature data if needed
             }
         });
 
-        mDatabase.child("Temperature").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String outputMessage = dataSnapshot.getValue(String.class);
-                if (outputMessage != null) {
-                    outputTemperature.setText(outputMessage);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle errors
-                Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        mDatabase.child("Humidity").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String outputMessage = dataSnapshot.getValue(String.class);
-                if (outputMessage != null) {
-                    outputAlert.setText(outputMessage);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle errors
-                Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Home.class);
+                Intent intent = new Intent(getApplicationContext(), Home.class);
                 startActivity(intent);
                 finish();
             }
