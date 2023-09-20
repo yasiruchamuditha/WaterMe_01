@@ -20,7 +20,7 @@ public class Alert extends AppCompatActivity {
 
     private TextView outputSoil;
     private TextView outputPercentage;
-    private TextView outputAlert;
+    private TextView outputAlert,outputAlert2;
     Button button, button2;
 
     @Override
@@ -34,6 +34,7 @@ public class Alert extends AppCompatActivity {
         outputSoil = findViewById(R.id.outputMoisterLevel);
         outputPercentage = findViewById(R.id.outputPercentage);
         outputAlert = findViewById(R.id.outputAlert);
+        outputAlert2 = findViewById(R.id.outputAlert2);
         button = findViewById(R.id.backAlert);
         button2 = findViewById(R.id.btncheckStatus);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,8 @@ public class Alert extends AppCompatActivity {
             public void onClick(View v) {
                 DatabaseReference databaseRef = database.getReference("soilMoistureSensor/sensorValue");
                 DatabaseReference moisturePercentageRef = database.getReference("soilMoistureSensor/moisturePercentage");
+                DatabaseReference databaseT = database.getReference("DHT11/Humidity");
+                DatabaseReference databaseH = database.getReference("DHT11/Temperature");
                 databaseRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -70,7 +73,39 @@ public class Alert extends AppCompatActivity {
                         Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+/*
+                databaseT.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Integer data = dataSnapshot.getValue(Integer.class);
+                        if (data != 0) {
+                            outputAlert.setText(String.valueOf(data));
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Handle errors
+                        Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
+                databaseH.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Integer data = dataSnapshot.getValue(Integer.class);
+                        if (data != 0.0) {
+                            outputAlert2.setText(String.valueOf(data));
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Handle errors
+                        Toast.makeText(Alert.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+ */
                 // Add code to retrieve and display temperature data if needed
             }
         });

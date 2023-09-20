@@ -8,27 +8,28 @@
 
 
     <LinearLayout
+        android:id="@+id/background02"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/cut_card_backgroud2"
-        android:orientation="vertical"
-        android:id="@+id/background02">
+        android:orientation="vertical">
+
         <LinearLayout
+            android:id="@+id/background01"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:background="@drawable/final0"
-            android:orientation="vertical"
-            android:id="@+id/background01">
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/backAlert"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
+                android:background="@color/white"
                 android:text="Back"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="20dp"
-                android:background="@color/white"
-                />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <Button
@@ -38,62 +39,98 @@
             android:layout_below="@id/valueEditTextS1"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="25dp"
-            android:text="Check Status"
             android:background="@android:color/holo_blue_light"
-            />
+            android:text="Check Status" />
+
         <TextView
             android:id="@+id/outputlabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
             android:text="Soil Moisture value is :"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginLeft="25dp"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/outputMoisterLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginLeft="25dp"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/outputlabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
             android:text="Soil Moisture Percentage is :"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginLeft="25dp"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/outputPercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/outputlabel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:textSize="20dp" />
+            android:layout_marginTop="30dp"
+            android:text="Environmental Temperature is :"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/outputAlert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
             android:text=""
             android:textColor="@color/black"
-            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/outputlabel4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:textSize="20dp" />
+            android:layout_marginTop="30dp"
+            android:text="Environmental Humidity is :"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/outputAlert2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>
